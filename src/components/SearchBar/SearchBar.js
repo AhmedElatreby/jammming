@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./SearchBar.css";
+import  "./SearchBar.css";
 
 class SearchBar extends React.Component {
   constructor(props) {
@@ -18,7 +18,7 @@ class SearchBar extends React.Component {
 
   render() {
     return (
-      <div className="searchBar">
+      <div className="SearchBar">
         <input
           type="text"
           placeholder="Enter a Song, Album, or Artist"

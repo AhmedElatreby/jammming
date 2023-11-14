@@ -12,7 +12,7 @@ class Playlist extends React.Component {
 
   render() {
     return (
-      <div className="playlist">
+      <div className="Playlist">
         <input defaultValue={"New Playlist"} onChange={this.handleNameChange} />
         <Tracklist
           tracks={this.props.playlistTracks}

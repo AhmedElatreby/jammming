@@ -1,7 +1,8 @@
 const clientID = "89fe8eb94075474a91fa76836b24cd5b";
 const redirectURI = "http://localhost:3000/";
+// const redirectURI = "https://www.jammingCC.surge.sh";
 
-let accessToken;  // Declare accessToken outside of the getAccessToken method
+let accessToken; 
 
 const Spotify = {
   getAccessToken() {
