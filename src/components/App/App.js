@@ -4,6 +4,7 @@ import styles from "./App.css";
 import SearchBar from "../SearchBar/SearchBar";
 import SearchResults from "../SearchResults/SearchResults";
 import Playlist from "../Playlist/Playlist";
+import Spotify from "../../util/Spotify";
 
 class App extends React.Component {
   constructor(props) {
@@ -77,8 +78,14 @@ class App extends React.Component {
     const trakURIs = this.state.playlistTracks.map((track) => track.uri);
   }
 
-  search(term){
-    console.log(term);
+  search(term) {
+    Spotify.search(term)
+      .then((result) => {
+        this.setState({ searchResults: result });
+      })
+      .catch((error) => {
+        console.error("Error searching for tracks:", error);
+      });
   }
 
   render() {
@@ -88,7 +95,7 @@ class App extends React.Component {
           Ja<span className="highlight">mmm</span>ing
         </h1>
         <div className="App">
-          <SearchBar onSearch={this.search}/>
+          <SearchBar onSearch={this.search} />
           <div className="App-playlist">
             <SearchResults
               searchResults={this.state.searchResults}
